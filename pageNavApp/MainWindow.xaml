@@ -128,7 +128,9 @@
                 </StackPanel>
             </Grid>
 
+            <!-- Display window that displays the other pages -->
             <Grid Grid.Column="1">
+                <!-- If you are getting a XDG0066 error here dont worry thats normal and doesn't actualy break anything-->
                 <ContentControl x:Name="Pages"
                                 Content="{Binding CurrentView}"/>
             </Grid>
@@ -136,6 +138,6 @@
         </Grid>
         <Button x:Name="CloseApp"
                 Style="{StaticResource ExitApp}"
-                Click="CloseApp_Click"/>
+                Click="CloseApp_Click"/><!-- Rather than calling a command in "NavigationVM.cs" like the other buttons this one calls a function in "MainWindow.xaml.cs-->
     </Grid>
 </Window>
