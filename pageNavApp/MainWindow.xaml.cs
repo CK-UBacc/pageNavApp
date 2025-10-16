@@ -28,7 +28,7 @@ namespace pageNavApp
         private void CloseApp_Click(object sender, RoutedEventArgs e)
         {
             //Close();
-            Application.Current.Shutdown();
+            Application.Current.Shutdown();//Both lines work
         }
     }
 }
