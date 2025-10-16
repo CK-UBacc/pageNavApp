@@ -1,0 +1,37 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="clr-namespace:pageNavApp.ViewModel"
+                    xmlns:view="clr-namespace:pageNavApp.View">
+    
+    <!-- Used to get the appropriate page for MainWindow.xaml -->
+    <!-- Not used by the files in /View -->
+    <DataTemplate DataType="{x:Type vm:HomeVM}">
+        <view:Home/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:CustomerVM}">
+        <view:Customers/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:ProductVM}">
+        <view:Products/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:OrderVM}">
+        <view:Orders/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:TransactionVM}">
+        <view:Transactions/>
+    </DataTemplate>
+    
+    <!-- Not in the power points. Add them when you need them -->
+    <DataTemplate DataType="{x:Type vm:ShipmentVM}">
+        <view:Shipment/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:SettingVM}">
+        <view:Settings/>
+    </DataTemplate>
+
+</ResourceDictionary>

@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="pageNavApp.View.Shipment"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:pageNavApp.ViewModel"
+             xmlns:local="clr-namespace:pageNavApp.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="622"
+             Style="{StaticResource Page_Style}">
+
+    <UserControl.DataContext>
+        <vm:ShipmentVM/>
+    </UserControl.DataContext>
+    
+    <Grid>
+        <Border CornerRadius="0,20,20,0">
+            <Border.Background>
+                <ImageBrush ImageSource="/Images/shipment_page.png"
+                            Stretch="None"/>
+            </Border.Background>
+        </Border>
+
+        <TextBlock Text="Expected Delivery :"
+                       Foreground="#dbdbdb"
+                       FontSize="12"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Bottom"
+                       FontFamily="/Fonts/#Rubik Medium"
+                       Margin="0,0,142,120"/>
+        <!-- Margin="0,0,142,100" -->
+        <!-- Custom Margin was used so that the white text and yellow text dont overlap eachother -->
+
+        <TextBlock Text="{Binding ShipmentTracking}"
+                       Foreground="#ced565"
+                       FontSize="12"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Bottom"
+                       FontFamily="/Fonts/#Rubik Medium"
+                       Margin="0,0,88,100"/>
+    </Grid>
+</UserControl>

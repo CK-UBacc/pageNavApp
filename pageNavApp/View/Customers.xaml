@@ -1,0 +1,46 @@
+﻿<!--Check to make sure you x:Class name is correct-->
+    <!-- x:Class="(ProjectName).View.(ThisFilesName) -->
+<UserControl x:Class="pageNavApp.View.Customers"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:pageNavApp.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="622"
+             Style="{StaticResource Page_Style}"><!-- "Style=" is used to get the slide in animation -->
+    <!-- xmlns:local="clr-namespace:(ProjectName).View" is never used so it can be deleted -->
+
+    <!-- Customer ID (Yellow text) doesn't show up without this -->
+    
+    <UserControl.DataContext>
+        <vm:CustomerVM/><!-- Header line xmlns:vm="clr-namespace:(ProjectName).ViewModel" is needed so that <vm:CustomerVM/> can be found-->
+    </UserControl.DataContext>
+    
+    <Grid>
+        <Border CornerRadius="0,20,20,0">
+            <Border.Background>
+                <ImageBrush ImageSource="/Images/customer_page.png"
+                            Stretch="None"/>
+            </Border.Background>
+        </Border>
+
+        <TextBlock Text="Customer ID :"
+                   Foreground="#dbdbdb"
+                   FontSize="12"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   FontFamily="/Fonts/#Rubik Medium"
+                   Margin="80,154,0,0"/>
+
+        <!-- Gets the "CustomerID" Variable from "CustomerVM.cs" -->
+        <TextBlock Text="{Binding CustomerID}"
+                   Foreground="#ced565"
+                   FontSize="12"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   FontFamily="/Fonts/#Rubik Medium"
+                   Margin="175,154,0,0"/>
+
+    </Grid>
+</UserControl>
